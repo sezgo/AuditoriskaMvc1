@@ -1,0 +1,37 @@
+﻿@model AuditoriskaMvc1.Models.Client
+
+@{
+    ViewBag.Title = "NewClient";
+}
+
+<h2>Add new client</h2>
+
+@using (Html.BeginForm("NewClient", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age)
+        @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type="number" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MovieCard)
+        @Html.TextBoxFor(m => m.MovieCard, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+    </div>
+
+    <button type="submit">Insert</button>}
