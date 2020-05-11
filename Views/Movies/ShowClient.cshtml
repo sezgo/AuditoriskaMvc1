@@ -1,0 +1,18 @@
+﻿@model AuditoriskaMvc1.Models.Client
+
+@{
+    ViewBag.Title = "ShowClient";
+}
+
+@if (Model.Age > 18)
+{
+    <h2 style="color:red;">Potreben e nadzor od roditel ili staratel</h2>
+}
+else
+{
+    <h2>@Model.Name - @Model.MovieCard</h2>
+    <h5>Age: @Model.Age</h5>
+    <h5>Telephone: @Model.Phone</h5>
+    <h5>Adress: @Model.Address</h5>
+}
+
