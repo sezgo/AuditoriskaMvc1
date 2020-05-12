@@ -9,6 +9,11 @@ namespace AuditoriskaMvc1.Models
 {
     public class Movie
     {
+        public Movie()
+        {
+            clients = new List<Client>();
+        }
+        [Key]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
@@ -18,5 +23,6 @@ namespace AuditoriskaMvc1.Models
         public string DownloadURL { get; set; }
         [Display(Name = "The Image URL")]
         public string ImageURL { get; set; }
+        public virtual ICollection<Client> clients { get; set; }
     }
 }

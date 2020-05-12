@@ -8,6 +8,11 @@ namespace AuditoriskaMvc1.Models
 {
     public class Client
     {
+        public Client()
+        {
+            movies = new List<Movie>();
+        }
+        [Key]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
@@ -16,5 +21,6 @@ namespace AuditoriskaMvc1.Models
         public string MovieCard { get; set; }
         [Range(1,99)]
         public int Age { get; set; }
+        public virtual ICollection<Movie> movies { get; set; }
     }
 }
